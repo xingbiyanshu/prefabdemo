@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.kedacom.vconf.prefabdemo"
+    namespace = "com.sissi.lab.prefabdemo"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.kedacom.vconf.prefabdemo"
+        applicationId = "com.sissi.lab.prefabdemo"
         minSdk = 26
         targetSdk = 33
         versionCode = 1
@@ -17,6 +17,10 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
+        }
+
+        ndk{
+            abiFilters +="arm64-v8a"
         }
     }
 
@@ -66,4 +70,6 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+
+    implementation(project(":logwrapper"))
 }

@@ -1,4 +1,4 @@
-package com.kedacom.vconf.prefabdemo
+package com.sissi.lab.prefabdemo
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.kedacom.vconf.prefabdemo", appContext.packageName)
+        assertEquals("com.sissi.lab.prefabdemo", appContext.packageName)
     }
 }

@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.kedacom.vconf.klog"
+    namespace = "com.sissi.lab.klog"
     compileSdk = 33
 
     defaultConfig {

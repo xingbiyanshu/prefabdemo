@@ -1,4 +1,4 @@
-package com.kedacom.vconf.klog
+package com.sissi.lab.klog
 
 import org.junit.Test
 

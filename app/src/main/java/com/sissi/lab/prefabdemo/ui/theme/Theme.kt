@@ -1,4 +1,4 @@
-package com.kedacom.vconf.prefabdemo.ui.theme
+package com.sissi.lab.prefabdemo.ui.theme
 
 import android.app.Activity
 import android.os.Build

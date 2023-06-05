@@ -1,4 +1,4 @@
-package com.kedacom.vconf.prefabdemo
+package com.sissi.lab.prefabdemo
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -10,10 +10,12 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.kedacom.vconf.prefabdemo.ui.theme.PrefabDemoTheme
+import com.sissi.lab.prefabdemo.ui.theme.PrefabDemoTheme
 
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        Logger.i("onCreate IN")
         super.onCreate(savedInstanceState)
         setContent {
             PrefabDemoTheme {
@@ -26,6 +28,7 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+        Logger.i("onCreate OUT")
     }
 }
 

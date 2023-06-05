@@ -1,4 +1,4 @@
-package com.kedacom.vconf.prefabdemo
+package com.sissi.lab.prefabdemo
 
 import org.junit.Test
 
