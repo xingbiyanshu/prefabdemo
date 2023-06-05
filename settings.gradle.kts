@@ -15,4 +15,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "PrefabDemo"
 include(":app")
- 
+include(":klog")
+include(":logwrapper")
