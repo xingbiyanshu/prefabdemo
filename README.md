@@ -2,7 +2,9 @@
 # Troubleshooting
 
 ## 2 files found with path 'lib/arm64-v8a/libklog.so' from inputs:
-
+**TIME**  
+2023年6月6日10点30分  
+**SCENE**  
 logwrapper implementation("com.sissi.lab:klog:1.0")  
 app implementation(project(":logwrapper"))  
 cause compiling error:  
