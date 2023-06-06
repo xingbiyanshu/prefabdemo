@@ -34,6 +34,13 @@ android {
 
     buildFeatures {
         prefab = true
+        prefabPublishing = true
+    }
+
+    prefab {
+        create("logwrapper"){
+            headers="src/main/cpp"
+        }
     }
 }
 
@@ -53,7 +60,6 @@ publishing {
                 from(components["release"])
             }
         }
-
     }
     repositories {
         maven {
