@@ -71,5 +71,5 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
-    implementation(project(":logwrapper"))
+    implementation("com.sissi.lab:logwrapper:1.0")
 }

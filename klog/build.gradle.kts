@@ -1,6 +1,7 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("maven-publish")
 }
 
 android {
@@ -9,23 +10,19 @@ android {
 
     defaultConfig {
         minSdk = 26
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles("consumer-rules.pro")
         externalNativeBuild {
             cmake {
-                cppFlags("")
+                arguments +="-DANDROID_STL=none"
             }
+        }
+        ndk {
+            abiFilters += "arm64-v8a"
         }
     }
 
     buildTypes {
         release {
             isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
         }
     }
     externalNativeBuild {
@@ -34,21 +31,41 @@ android {
             version = "3.22.1"
         }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+
+    buildFeatures {
+        prefabPublishing = true
     }
-    kotlinOptions {
-        jvmTarget = "1.8"
+
+    prefab {
+        create("klog"){
+            headers="src/main/cpp"
+        }
     }
+
 }
 
 dependencies {
 
-    implementation("androidx.core:core-ktx:1.9.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.9.0")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+}
+
+
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            groupId = "com.sissi.lab"
+            artifactId = "klog"
+            version = "1.0"
+
+            afterEvaluate {
+                from(components["release"])
+            }
+        }
+
+    }
+    repositories {
+        maven {
+            name="myrepo"
+            url = uri("${rootProject.projectDir}/build/repository")
+        }
+    }
 }

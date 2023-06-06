@@ -1,10 +1,5 @@
-#include <jni.h>
-#include <string>
+#include <android/log.h>
 
-extern "C" JNIEXPORT jstring JNICALL
-Java_com_kedacom_vconf_klog_NativeLib_stringFromJNI(
-        JNIEnv* env,
-        jobject /* this */) {
-    std::string hello = "Hello from C++";
-    return env->NewStringUTF(hello.c_str());
+void logi(const char *content) {
+    __android_log_write(ANDROID_LOG_INFO, "KLOG", content);
 }
