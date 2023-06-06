@@ -1,26 +1,25 @@
-package com.sissi.lab.prefabdemo
+package com.sissi.lab
 
 object Logger {
-
     init {
         System.loadLibrary("logwrapper")
     }
 
-    external fun logw(content:String)
+    private external fun log(content:String)
 
     fun d(content:String){
-        logw(content)
+        log(content)
     }
 
     fun i(content:String){
-        logw(content)
+        log(content)
     }
 
     fun w(content:String){
-        logw(content)
+        log(content)
     }
 
     fun e(content:String){
-        logw(content)
+        log(content)
     }
 }

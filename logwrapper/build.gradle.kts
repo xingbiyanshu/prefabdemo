@@ -13,6 +13,7 @@ android {
         externalNativeBuild {
             cmake {
                 arguments +="-DANDROID_STL=none"
+                cppFlags += "-fvisibility=hidden"
             }
         }
         ndk {
@@ -41,6 +42,14 @@ android {
         create("logwrapper"){
             headers="src/main/cpp"
         }
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
     }
 }
 
